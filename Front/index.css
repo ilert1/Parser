@@ -1,0 +1,85 @@
+:root {
+  --primary-color: #546792;
+  --text-color: #ffffff;
+  --default-border-color: #000;
+  --error-color: #ff0000;
+}
+
+html {
+  font-size: 10px;
+  line-height: 10px;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+#main {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+
+  padding: 20px;
+}
+
+.main__wrapper {
+  max-width: 70%;
+  width: 100%;
+}
+.create-task-block {
+  position: relative;
+  font-size: 2rem;
+  line-height: 2.5rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+.create-task-block__input {
+  border: 2px solid var(--primary-color);
+  border-radius: 5px;
+  color: var(--primary-color);
+
+  font-size: 2rem;
+  line-height: 2.5rem;
+  height: 40px;
+  width: 50%;
+  padding: 0;
+  margin-bottom: 40px;
+}
+
+.create-task-block__button {
+  height: 44px;
+  width: 50%;
+}
+
+.create-task-block__button,
+.task-item__delete-button {
+  cursor: pointer;
+
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  padding: 5px 20px;
+  border-radius: 5px;
+
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+}
+
+
+.error-message-block {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding: 50px;
+
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: var(--error-color);
+}
+.list-group-item {
+  font-size: 16px;
+}

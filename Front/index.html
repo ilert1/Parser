@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="index.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+        />
+        <title>List ex</title>
+    </head>
+    <body>
+        <div id="main">
+            <div class="main__wrapper">
+                <form class="create-task-block">
+                    <div class="task-block">
+                        <span>ЗАПРОС&nbsp; &nbsp;</span>
+                        <input
+                            name="query"
+                            class="create-task-block__input default-text-input"
+                            type="text"
+                            placeholder="Введите словосочетание для поиска"
+                            value=""
+                        />
+                    </div>
+                    <div class="my-brand">
+                        <span>Мой бренд&nbsp; &nbsp;</span>
+                        <input
+                            name="myBrandName"
+                            class="create-task-block__input default-text-input"
+                            type="text"
+                            placeholder="Введите название бренда"
+                            value="Бренд"
+                        />
+                    </div>
+                    <button
+                        type="submit"
+                        class="create-task-block__button default-button"
+                    >
+                        Поиск
+                    </button>
+                </form>
+                <div class="tasks-list"></div>
+            </div>
+        </div>
+        <div class="container">
+            <ol id="list" class="list-group list-group-numbered"></ol>
+        </div>
+        <script src="index.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
