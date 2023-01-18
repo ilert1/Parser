@@ -30,9 +30,8 @@ createTaskForm.addEventListener("submit", async (event) => {
     document.querySelector(".create-task-block__button.default-button");
 
     const data = await getData(query);
-    if (!Array.isArray(data)) {
-        alert("Ничего не найдено по этому запросу.");
-        await Promise.reject();
+    if (!data.lenght) {
+        ("По этому запросу ничего не найдено");
     }
     renderList(data, myBrandName);
 });

@@ -17,11 +17,7 @@ app.get("/", async (req, res) => {
 
     try {
         let m = await main(query);
-        if (m === "Not found") {
-            res.send("Not found");
-        } else {
-            res.send(m);
-        }
+        res.send(m);
     } catch (error) {
         console.log(error.message);
     }
@@ -33,7 +29,7 @@ app.listen(port, () => {
 
 async function main(query) {
     const browser = await playwright.chromium.launch({
-        headless: false, // setting this to true will not run the UI
+        headless: true, // setting this to true will not run the UI
     });
 
     const page = await browser.newPage();
@@ -46,9 +42,7 @@ async function main(query) {
         hasText: "Бренд",
     });
     await node.click();
-    if (await page.evaluate(".not-found-search__title")) {
-        throw new Error("Not found");
-    }
+
     await page.locator(".filter__show-all").click();
 
     await page.waitForSelector(
@@ -74,6 +68,5 @@ async function main(query) {
             return res;
         });
     await browser.close();
-    console.log(m);
     return m;
 }
